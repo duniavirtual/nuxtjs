@@ -30,8 +30,7 @@
 
 <script setup>
 const route = useRoute()
-const siteConfig = useSiteConfig()
-const siteUrl = computed(() => siteConfig.value.url)
+const siteUrl = useSiteUrl()
 
 const { data: indexDoc } = await useAsyncData('index-doc', async () => {
         let doc = await queryContent().where({ slug: '/index' }).findOne().catch(() => null)

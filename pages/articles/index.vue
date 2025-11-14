@@ -10,8 +10,7 @@
 </template>
 
 <script setup>
-const siteConfig = useSiteConfig()
-const siteUrl = computed(() => siteConfig.value.url)
+const siteUrl = useSiteUrl()
 
 const description = "Artikel dan panduan berguna seputar penggunaan mSpy dan keamanan digital keluarga.";
 const title = "Artikel | mSpy Indonesia";

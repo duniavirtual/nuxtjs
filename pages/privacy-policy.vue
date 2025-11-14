@@ -15,8 +15,7 @@
 
 <script setup>
 const route = useRoute();
-const siteConfig = useSiteConfig()
-const siteUrl = computed(() => siteConfig.value.url)
+const siteUrl = useSiteUrl()
 
 const title = 'Kebijakan Privasi';
 const description = 'Kebijakan privasi penyadap.pages.dev — bagaimana data dikumpulkan dan digunakan.';

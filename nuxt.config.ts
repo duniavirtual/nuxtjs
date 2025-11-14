@@ -7,6 +7,11 @@ const REPL_HOST = process.env.REPL_SLUG && process.env.REPL_OWNER
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
   css: ['~/assets/css/tailwind.css'],
+  runtimeConfig: {
+    public: {
+      siteUrl: SITE_URL
+    }
+  },
   devServer: {
     host: '0.0.0.0',
     port: PORT,
@@ -16,7 +21,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-11-08',
     preset: process.env.NODE_ENV === 'production' ? 'cloudflare-pages' : undefined,
     externals: {
-      inline: ['sharp', '@parcel/watcher']
+      inline: process.env.NODE_ENV === 'production' ? ['sharp'] : []
     },
     minify: true,
     prerender: {
@@ -26,6 +31,9 @@ export default defineNuxtConfig({
       options: {
         treeShaking: true
       }
+    },
+    experimental: {
+      wasm: true
     }
   },
   modules: [

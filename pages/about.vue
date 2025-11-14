@@ -15,8 +15,7 @@
 
 <script setup>
 const route = useRoute();
-const siteConfig = useSiteConfig()
-const siteUrl = computed(() => siteConfig.value.url)
+const siteUrl = useSiteUrl()
 
 const title = 'Tentang Kami';
 const description = 'Tentang penyadap.pages.dev — layanan pemasangan dan panduan penggunaan mSpy untuk keamanan digital keluarga.';

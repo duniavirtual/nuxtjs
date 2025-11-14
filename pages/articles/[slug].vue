@@ -99,8 +99,7 @@
 </template>
 <script setup>
 const route = useRoute();
-const siteConfig = useSiteConfig()
-const siteUrl = computed(() => siteConfig.value.url)
+const siteUrl = useSiteUrl()
 const currentPath = `/articles/${route.params.slug}`;
 
 const { data: article } = await useAsyncData(
